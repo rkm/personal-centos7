@@ -1,0 +1,7 @@
+
+---
+
+- name: Install Galaxy roles
+  tasks:
+    - shell: ansible-galaxy install -r requirements.yml
+
