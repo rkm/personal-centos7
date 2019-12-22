@@ -8,4 +8,3 @@ ntp_timezone: Europe/London
 docker_users: [rkm]
 
 python3_version: 3.7.6
-

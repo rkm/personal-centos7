@@ -3,4 +3,3 @@
 
 - name: Install Galaxy roles
   shell: ansible-galaxy install -r requirements.yml
-
