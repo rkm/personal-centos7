@@ -8,14 +8,14 @@
   environment:
     PATH: /usr/local/bin:{{ansible_env.PATH}}
 
-- name: Install python3 build dependencies 
+- name: Install python3 build dependencies
   yum:
      name:
        - bzip2-devel
        - libffi-devel
        - openssl-devel
        - sqlite-devel
-  when: crurent_version.rc != 0
+  when: current_version.rc != 0
 
 - name: Install python3
   shell: |
@@ -30,4 +30,3 @@
     ln -fs /usr/local/bin/python{{python3_version[:3]}} /usr/local/bin/python3
     ln -fs /usr/local/bin/pip{{python3_version[:3]}} /usr/local/bin/pip3
   when: current_version.rc != 0
-
