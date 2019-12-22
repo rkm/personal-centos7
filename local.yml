@@ -9,4 +9,6 @@
         - vim
         - net-tools
         - htop
+        - gcc
+        - java-1.8.0-openjdk
 
