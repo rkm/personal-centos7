@@ -16,6 +16,6 @@
     make altinstall
     cd ..
     rm Python-{{python3_version}}.tgz
-    ln -s /usr/local/bin/python{{python3_version[:3]}} /usr/local/bin/python3
-    ln -s /usr/local/bin/pip{{python3_version[:3]}} /usr/local/bin/pip3
+    ln -fs /usr/local/bin/python{{python3_version[:3]}} /usr/local/bin/python3
+    ln -fs /usr/local/bin/pip{{python3_version[:3]}} /usr/local/bin/pip3
 
