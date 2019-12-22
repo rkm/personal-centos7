@@ -1,6 +1,0 @@
----
-
-- name: Install ntpd
-  tasks:
-    - include: geerlingguy.ntp
-
