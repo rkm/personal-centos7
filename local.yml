@@ -2,27 +2,10 @@
 
 - hosts: localhost
   become: true
+  pre_tasks:
+    - name: Update repositories
+      yum: update_cache=yes
+      changed_when: False
   tasks:
-  - name: Install git 2
-    shell: |
-      yum -y install https://centos7.iuscommunity.org/ius-release.rpm
-      yum -y install git2u-all
-  - name: Install yum packages
-    yum:
-      name:
-        - epel-release
-        - vim
-        - net-tools
-        - htop
-        - gcc
-        - java-1.8.0-openjdk
-        - nmap
-        - wget
-        - curl
-        - telnet
-        - python-pip
-  - name: Install pip packages
-    pip:
-      name:
-        - speedtest-cli
+    - include: tasks/packages.yml
 
