@@ -6,9 +6,15 @@
   - name: Install packages
     yum:
       name:
+        - epel-release
         - vim
         - net-tools
         - htop
         - gcc
         - java-1.8.0-openjdk
+        - nmap
+        - wget
+        - curl
+        - telnet
+        - python-pip
 
