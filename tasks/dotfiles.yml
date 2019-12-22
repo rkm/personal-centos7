@@ -4,7 +4,7 @@
 - name: Clone https://github.com/rkm/dotfiles
   git:
     repo: https://github.com/rkm/dotfiles
-    dest: /tmp
+    dest: /tmp/dotfiles
     depth: 1
 
 - name: Create combined .gitconfig
