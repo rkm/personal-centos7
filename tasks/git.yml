@@ -3,6 +3,7 @@
 
 - name: Register version check
   shell: git --version | grep " 2."
+
   register: current_version
   ignore_errors: yes
 
@@ -10,5 +11,5 @@
   shell: |
     yum -y install https://centos7.iuscommunity.org/ius-release.rpm
     yum -y install git2u-all
-  when: current_version.rc == 1
+  when: current_version.rc != 0
 
