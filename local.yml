@@ -4,9 +4,9 @@
   become: true
   tasks:
   - name: Install packages
-    yum: name={{item}}
-    with_items:
-      - vim
-      - net-tools
-      - htop
+    yum:
+      name:
+        - vim
+        - net-tools
+        - htop
 
