@@ -3,17 +3,21 @@
 - name: Install yum packages
   yum:
     name:
-      - epel-release
-      - vim
-      - net-tools
-      - htop
-      - gcc
-      - java-1.8.0-openjdk
-      - nmap
-      - wget
       - curl
-      - telnet
+      - epel-release
+      - gcc
+      - gdb
+      - htop
+      - java-1.8.0-openjdk
+      - net-tools
+      - nmap
       - python-pip
+      - rsync
+      - screen
+      - strace
+      - telnet
+      - vim
+      - wget
 
 - name: Install pip packages
   pip:
