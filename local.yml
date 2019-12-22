@@ -9,4 +9,5 @@
   tasks:
     - include: tasks/git.yml
     - include: tasks/packages.yml
+    - include: tasks/ntpd.yml
 
