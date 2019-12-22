@@ -4,7 +4,7 @@
 - name: Install python3
   shell: |
     echo ver {{python3_version.split(".")[:1]}}
-    aaaaaa
+    exit 1
     cd /usr/src
     wget https://www.python.org/ftp/python/{{python3_version}}/Python-{{python3_version}}.tgz
     tar xzf Python-{{python3_version}}.tgz
