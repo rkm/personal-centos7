@@ -1,0 +1,14 @@
+
+---
+
+- name: Install python3
+  shell: |
+    cd /usr/src
+    wget https://www.python.org/ftp/python/{{python3_version}}/Python-{{python3_version}}.tgz
+    tar xzf Python-{{python3_version}}.tgz
+    cd Python-{{python3_version}}
+    ./configure --enable-optimizations
+    make altinstall
+    cd ..
+    rm Python-{{python3_version}}.tgz
+

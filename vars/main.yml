@@ -7,3 +7,5 @@ ntp_timezone: Europe/London
 # geerlingguy.docker
 docker_users: [rkm]
 
+python3_version = 3.7.6
+

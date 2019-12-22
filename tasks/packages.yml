@@ -3,14 +3,18 @@
 - name: Install yum packages
   yum:
     name:
+      - bzip2-devel
       - curl
       - epel-release
+      - gcc
       - gcc
       - gdb
       - htop
       - java-1.8.0-openjdk
+      - libffi-devel
       - net-tools
       - nmap
+      - openssl-devel
       - python-pip
       - rsync
       - screen

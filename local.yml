@@ -11,4 +11,5 @@
     - include: tasks/install_roles.yml
     - include: tasks/git.yml
     - include: tasks/packages.yml
+    - include: tasks/python3.yml
 
