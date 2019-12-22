@@ -4,6 +4,7 @@
 - name: Register version check
   shell: git --version | grep " 3."
   register: current_version
+  ignore_errors: yes
 
 - name: Install git 2
   shell: |
