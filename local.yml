@@ -2,6 +2,8 @@
 
 - hosts: localhost
   become: true
+  vars_files:
+    - vars/main.yml
   pre_tasks:
     - name: Update repositories
       yum: update_cache=yes
