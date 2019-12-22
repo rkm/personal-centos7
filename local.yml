@@ -3,6 +3,10 @@
 - hosts: localhost
   become: true
   tasks:
+  - name: Install git 2
+    shell: |
+      yum -y install https://centos7.iuscommunity.org/ius-release.rpm
+      yum -y install git2u-all
   - name: Install yum packages
     yum:
       name:
