@@ -6,7 +6,7 @@
   register: current_version
   ignore_errors: yes
   environment:
-    PATH:$PATH:/usr/local/bin
+    PATH: /usr/local/bin:{{ansible_env.PATH}}
 
 - name: Install python3
   shell: |
