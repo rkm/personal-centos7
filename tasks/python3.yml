@@ -5,6 +5,8 @@
   shell: python3 --version | grep {{python3_version}}
   register: current_version
   ignore_errors: yes
+  environment:
+    PATH:$PATH:/usr/local/bin
 
 - name: Install python3
   shell: |
