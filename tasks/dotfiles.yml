@@ -14,7 +14,7 @@
     /tmp/dotfiles/linux/.gitconfig
     > /tmp/dotfiles/.gitconfig
 
-- name: Copy common .gitconfig
+- name: Copy combined .gitconfig
   copy:
     src: /tmp/dotfiles/.gitconfig
     dest: /home/{{username}}/.gitconfig
@@ -22,3 +22,15 @@
     group: "{{username}}"
     mode: 0640
     backup: yes
+
+- name: Copy bash dotfiles
+  copy:
+    src: /tmp/dotfiles/linux/{{item}}
+    dest: /home/{{username}}/{{item}}
+    owner: "{{username}}"
+    group: "{{username}}"
+    mode: 0640
+    backup: yes
+  with_items:
+    - .bashrc
+    - .bash_aliases
