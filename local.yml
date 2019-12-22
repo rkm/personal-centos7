@@ -3,7 +3,7 @@
 - hosts: localhost
   become: true
   tasks:
-  - name: Install packages
+  - name: Install yum packages
     yum:
       name:
         - epel-release
@@ -17,4 +17,8 @@
         - curl
         - telnet
         - python-pip
+  - name: Install pip packages
+    pip:
+      name:
+        - speedtest-cli
 
