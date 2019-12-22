@@ -34,3 +34,4 @@
   with_items:
     - .bashrc
     - .bash_aliases
+    - .inputrc
