@@ -20,3 +20,7 @@
     name:
       - speedtest-cli
 
+- name: Run geerlingguy.ntp
+  include_role:
+    name: geerlingguy.ntp
+
