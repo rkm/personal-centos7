@@ -9,7 +9,6 @@
       - gcc
       - gdb
       - htop
-      - java-1.8.0-openjdk
       - net-tools
       - nmap
       - python-pip
@@ -33,3 +32,6 @@
   include_role:
     name: geerlingguy.docker
 
+- name: Run geerlingguy.java
+  include_role:
+    name: geerlingguy.java
