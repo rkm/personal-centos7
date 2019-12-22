@@ -1,8 +1,8 @@
 
-# Personal CentOS7 Ansible
+# Personal CentOS 7 Ansible
 
-Ansible configuration for my personal CentOS 7 VMs
+Ansible configuration for my personal CentOS 7 VMs.
 
 ```bash
-> ansible-pull -U git@github.com:rkm/personal-centos7-ansible
+> ansible-pull -U https://github.com/rkm/personal-centos7-ansible
 ```
