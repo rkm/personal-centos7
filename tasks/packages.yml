@@ -35,6 +35,10 @@
   include_role:
     name: geerlingguy.git
 
+- name: Set docker username
+  set_fact:
+    docker_users: ["{{ username }}"]
+
 - name: Run geerlingguy.docker
   include_role:
     name: geerlingguy.docker

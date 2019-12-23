@@ -13,7 +13,6 @@ git_install_from_source: false
 git_version: 2.24.1
 
 # geerlingguy.docker
-docker_users: ["{{ username }}"]
 docker_service_state: stopped
 docker_service_enabled: false
 
