@@ -11,9 +11,9 @@
         state: latest
         update_cache: true
     - name: Check GitHub token set
-      command: '[ ! -z "$GITHUB_PAT" ]'
+      command: '[ -z "$GITHUB_PAT" ]'
       register: result
-      failed_when: result.rc != 0
+      failed_when: result.rc == 0
   tasks:
     - include: tasks/users.yml
     - include: tasks/install_roles.yml
