@@ -20,7 +20,6 @@
   tasks:
     - include: tasks/users.yml
     - include: tasks/install_roles.yml
-    - include: tasks/git.yml
     - include: tasks/packages.yml
     - include: tasks/python3.yml
     - include: tasks/azure_cli.yml
