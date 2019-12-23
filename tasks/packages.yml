@@ -23,6 +23,7 @@
     name:
       - speedtest-cli
 
+# TODO: Move this to install_roles and run in loop
 - name: Run geerlingguy.ntp
   include_role:
     name: geerlingguy.ntp

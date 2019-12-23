@@ -7,8 +7,8 @@
     dest: /tmp/dotfiles
     depth: 1
     version: master
-    register: result
-  changed_when: result.before != result.after
+  register: result
+  changed_when: result['before'] != result['after']
 
 - name: Create combined .gitconfig
   shell: >
