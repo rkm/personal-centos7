@@ -16,7 +16,7 @@
     dest: /home/{{ username  }}/dev/all-repos.json
     owner: '{{ username  }}'
     group: '{{ username  }}'
-    mode: 0640
+    mode: 0600
     backup: true
 
 - name: Create all-repos.json  # noqa 303
