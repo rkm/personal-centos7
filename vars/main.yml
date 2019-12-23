@@ -13,6 +13,8 @@ git_version: "2.24.1"
 
 # geerlingguy.docker
 docker_users: [rkm]
+docker_service_state: stopped
+docker_service_enabled: false
 
 # geerlingguy.ruby
 ruby_install_from_source: true
