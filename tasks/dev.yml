@@ -29,4 +29,6 @@
   become: true
   become_user: "{{ username }}"
   command: all-repos-clone -C /home/{{ username }}/dev/all-repos.json -j 0
+  register: result
+  changed_when: '"branch is behind" in result.stdout'
   when: true
