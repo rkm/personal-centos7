@@ -7,7 +7,7 @@ Ansible configuration for my personal CentOS 7 VMs.
 
 ```bash
 > sudo yum -y install git ansible
-> sudo ansible-pull -U https://github.com/rkm/personal-centos7-ansible
+> ansible-pull -U https://github.com/rkm/personal-centos7-ansible
 ```
 
 The `all-repos-clone` task is disabled by default. To enable it, you need to first create a GitHub Personal access token. Then run:
