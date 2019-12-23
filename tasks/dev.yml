@@ -10,8 +10,8 @@
 
 - name: Create all-repos.yml  # noqa 303
   shell: |
-    sed -i "s/UN/{{ username }}/g" files/all-repos.yml
-    sed -i "s/PAT/{{ github_pat }}/g" files/all-repos.yml
+    sed -i "s/UN/{{ username }}/g" files/all-repos.json
+    sed -i "s/PAT/{{ github_pat }}/g" files/all-repos.json
   changed_when: False
 
 - name: Copy all-repos.yml
