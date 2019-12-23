@@ -7,7 +7,6 @@
   pre_tasks:
     - name: Update repositories
       yum:
-        changed_when: False
         name: '*'
         state: latest
         update_cache: yes
