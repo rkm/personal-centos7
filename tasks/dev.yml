@@ -1,0 +1,19 @@
+
+---
+
+
+- name: Create dev directory
+  file:
+    path: /home/{{ username ]}/dev
+    state: directory
+    mode: '0740'
+
+- name: Install all-repos
+  pip:
+    name: all-repos
+    executable: /usr/local/bin/pip3
+
+- name: Run all-repos-clonse
+  command: all-repos-clone /home/{{ username }}/dev
+  register: result
+  changed_when: result.rc != 0
