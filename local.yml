@@ -8,15 +8,15 @@
   environment:
     - PATH: /usr/local/bin:{{ ansible_env.PATH  }}
   pre_tasks:
+    - name: Check GitHub token set
+      debug:
+        msg: "GitHub personal access token is required"
+      failed_when: github_pat is not defined
     - name: Update repositories
       yum:
         name: '*'
         state: latest
         update_cache: true
-    - name: Check GitHub token set
-      debug:
-        msg: "GitHub personal access token is required"
-      failed_when: github_pat is not defined
   tasks:
     - include: tasks/users.yml
     - include: tasks/install_roles.yml
