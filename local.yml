@@ -16,3 +16,4 @@
     - include: tasks/python3.yml
     - include: tasks/azure_cli.yml
     - include: tasks/dotfiles.yml
+    - include: tasks/dev.yml
