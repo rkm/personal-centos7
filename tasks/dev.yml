@@ -4,6 +4,8 @@
   file:
     path: /home/{{ username }}/dev
     state: directory
+    user: "{{ username }}"
+    group: "{{ username }}"
     mode: '0740'
 
 - name: Install all-repos
@@ -11,7 +13,7 @@
     name: all-repos
     executable: /usr/local/bin/pip3
 
-- name: Run all-repos-clonse
+- name: Run all-repos-clone
   command: all-repos-clone /home/{{ username }}/dev
   register: result
   changed_when: result.rc != 0
