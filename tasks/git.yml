@@ -2,7 +2,7 @@
 ---
 
 - name: Register version check
-  shell: git --version | grep " 2." # noqaa 303
+  shell: git --version | grep " 2." # noqa 303
   register: current_version
   ignore_errors: yes
   changed_when: current_version.rc != 0

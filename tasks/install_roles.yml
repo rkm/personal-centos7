@@ -2,5 +2,5 @@
 ---
 
 - name: Install Galaxy roles
-  command: ansible-galaxy install -r requirements.yml # noqa E301
+  command: ansible-galaxy install -r requirements.yml
   changed_when: False
