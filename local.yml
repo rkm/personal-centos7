@@ -10,6 +10,9 @@
         name: '*'
         state: latest
         update_cache: true
+    - name: Load vars file
+      vars_files:
+        - /home/{{ username }}/.ansible/vars.yml
     - name: Check GitHub token set
       debug:
         msg: "GitHub personal access token is required"
