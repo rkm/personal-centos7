@@ -7,6 +7,10 @@ python3_version: 3.7.6
 # geerlingguy.ntp
 ntp_timezone: Europe/London
 
+# geerlingguy.git
+git_install_from_source: false
+git_version: "2.24.1"
+
 # geerlingguy.docker
 docker_users: [rkm]
 

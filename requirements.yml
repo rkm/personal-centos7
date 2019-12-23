@@ -2,5 +2,6 @@
 
 - src: geerlingguy.ntp
 - src: geerlingguy.docker
+- src: geerlingguy.git
 - src: geerlingguy.java
 - src: geerlingguy.ruby

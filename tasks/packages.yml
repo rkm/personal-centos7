@@ -27,6 +27,10 @@
   include_role:
     name: geerlingguy.ntp
 
+- name: Run geerlingguy.git
+  include_role:
+    name: geerlingguy.git
+
 - name: Run geerlingguy.docker
   include_role:
     name: geerlingguy.docker
