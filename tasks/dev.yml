@@ -8,25 +8,25 @@
     group: "{{ username }}"
     mode: '0740'
 
+- name: Copy all-repos.json to dev
+  copy:
+    src: files/all-repos.json
+    dest: /home/{{ username  }}/dev/all-repos.json
+    owner: '{{ username  }}'
+    group: '{{ username  }}'
+    mode: 0640
+    backup: true
+
 - name: Create all-repos.json  # noqa 303
   shell: |
-    sed -i "s/UN/{{ username }}/g" files/all-repos.json
-    sed -i "s/PAT/{{ github_pat }}/g" files/all-repos.json
+    sed -i "s/UN/{{ username }}/g" /home/{{ username  }}/dev/all-repos.json
+    sed -i "s/PAT/{{ github_pat }}/g" /home/{{ username  }}/dev/all-repos.json
   changed_when: False
-  tags:
-    - testeroni
 
 - name: Install all-repos
+  become: True
+  become_user: "{{ username }}"
   pip:
     name: all-repos
     executable: /usr/local/bin/pip3
-
-- name: Run all-repos-clone
-  shell: |
-    pwd
-    ls -l
-    all-repos-clone -C files/all-repos.json
-  register: result
-  changed_when: result.rc != 0
-  tags:
-    - testeroni
+    extra_args: --user
