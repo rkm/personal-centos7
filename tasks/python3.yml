@@ -24,7 +24,7 @@
     tar xzf Python-{{ python3_version  }}.tgz
     cd Python-{{ python3_version  }}
     ./configure --enable-optimizations
-    make altinstall
+    make altinstall --exec-prefix=/usr/local
     cd ..
     rm Python-{{ python3_version  }}.tgz
     ln -fs /usr/local/bin/python{{ python3_version[:3]  }} \
