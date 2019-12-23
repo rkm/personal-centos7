@@ -6,11 +6,15 @@
     uid: 900
     state: present
 
-- name: Copy sudoers_ansible
-  copy:
-    src: files/sudoers_ansible
-    dest: /etc/sudoers.d/ansible
+- name: Copy sudoers files
+  template:
+    src: files/sudoers_user
+    dest: /etc/sudoers.d/dont-prompt-{{ item }}-for-password
     owner: root
     group: root
     mode: 0440
-    backup: true
+  with_list:
+    - ansible
+    - "{{ username }}"
+  tags:
+    - testeroni
