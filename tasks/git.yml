@@ -7,6 +7,12 @@
   ignore_errors: yes
   changed_when: current_version.rc != 0
 
+- name: Remove existing git
+  yum:
+    name: "git*"
+    state: removed
+  when: current_version.rc != 0
+
 - name: Install IUS
   yum:
     name:
