@@ -8,6 +8,8 @@
     group: "{{ username }}"
     mode: '0740'
 
+# TODO(RKM 2019-12-23) Fix this - it will always result in a change at the
+# moment
 - name: Copy all-repos.json to dev
   copy:
     src: files/all-repos.json
@@ -24,9 +26,15 @@
   changed_when: False
 
 - name: Install all-repos
-  become: True
+  become: true
   become_user: "{{ username }}"
   pip:
     name: all-repos
     executable: /usr/local/bin/pip3
     extra_args: --user
+
+- name: Run all-repos
+  become: true
+  become_user: "{{ username }}"
+  command: all-repos-clone -C /home/{{ username }}/dev/all-repos.json
+  when: true
