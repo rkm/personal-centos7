@@ -19,7 +19,7 @@ The `all-repos-clone` task is disabled by default. It can be run with:
 > au --tags all-repos-clone
 ```
 
-Note that this may take some time as it will clone *all* your repos (i.e. orgs, collaborations, forks, private). This can be configured in `files/all-repos.json`. See https://github.com/asottile/all-repos.
+Note that this may take some time as it will clone/update ***all*** your repos (i.e. orgs, collaborations, forks, private). This can be configured in `files/all-repos.json`. See https://github.com/asottile/all-repos.
 
 ## Configuration
 
