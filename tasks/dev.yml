@@ -4,7 +4,7 @@
   file:
     path: /home/{{ username }}/dev
     state: directory
-    user: "{{ username }}"
+    owner: "{{ username }}"
     group: "{{ username }}"
     mode: '0740'
 
