@@ -1,10 +1,13 @@
 ---
 
+- name: Install EPEL
+  yum:
+    name: epel-release
+
 - name: Install yum packages
   yum:
     name:
       - curl
-      - epel-release
       - gcc
       - gdb
       - htop
