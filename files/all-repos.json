@@ -3,11 +3,11 @@
     "source": "all_repos.source.github",
     "source_settings": {
         "api_key": "{{ github_pat }}",
-        "username": "{{ username }}"
+        "username": "{{ username }}",
+        "collaborator": true,
+        "forks": true,
+        "private": true
     },
-    "push": "all_repos.push.github_pull_request",
-    "push_settings": {
-        "api_key": "{{ github_pat }}",
-        "username": "{{ username }}"
-    }
+    "push": "all_repos.push.readonly",
+    "push_settings": {}
 }
