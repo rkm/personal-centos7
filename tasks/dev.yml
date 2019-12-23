@@ -8,16 +8,16 @@
     group: "{{ username }}"
     mode: '0740'
 
-- name: Create all-repos.yml  # noqa 303
+- name: Create all-repos.json  # noqa 303
   shell: |
     sed -i "s/UN/{{ username }}/g" files/all-repos.json
     sed -i "s/PAT/{{ github_pat }}/g" files/all-repos.json
   changed_when: False
 
-- name: Copy all-repos.yml
+- name: Copy all-repos.json
   copy:
-    src: files/all-repos.yml
-    dest: /home/{{ username  }}/all-repos.yml
+    src: files/all-repos.json
+    dest: /home/{{ username  }}/all-repos.json
     owner: '{{ username  }}'
     group: '{{ username  }}'
     mode: 0640
