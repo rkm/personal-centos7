@@ -11,9 +11,9 @@
         state: latest
         update_cache: true
     - name: Check GitHub token set
-      command: '[ -z "$GITHUB_PAT" ]'
-      register: result
-      failed_when: result.rc == 0
+      debug:
+        msg: "GitHub personal access token is required"
+      when: github_pat is not defined
   tasks:
     - include: tasks/users.yml
     - include: tasks/install_roles.yml
