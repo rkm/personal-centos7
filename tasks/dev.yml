@@ -14,21 +14,12 @@
     sed -i "s/PAT/{{ github_pat }}/g" files/all-repos.json
   changed_when: False
 
-- name: Copy all-repos.json
-  copy:
-    src: files/all-repos.json
-    dest: /home/{{ username  }}/all-repos.json
-    owner: '{{ username  }}'
-    group: '{{ username  }}'
-    mode: 0640
-    backup: True
-
 - name: Install all-repos
   pip:
     name: all-repos
     executable: /usr/local/bin/pip3
 
 - name: Run all-repos-clone
-  command: all-repos-clone /home/{{ username }}/dev
+  command: all-repos-clone /home/{{ username }}/dev -C files/all-repos.json
   register: result
   changed_when: result.rc != 0

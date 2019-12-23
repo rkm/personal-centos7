@@ -1,13 +1,13 @@
 {
-    "output_dir": "home/UN/dev",
+    "output_dir": "home/rkm/dev",
     "source": "all_repos.source.github",
     "source_settings": {
-        "api_key": "PAT",
-        "username": "UN"
+        "api_key": "TEST",
+        "username": "rkm"
     },
     "push": "all_repos.push.github_pull_request",
     "push_settings": {
-        "api_key": "PAT",
-        "username": "UN"
+        "api_key": "TEST",
+        "username": "rkm"
     }
 }
