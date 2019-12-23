@@ -3,13 +3,15 @@
 - hosts: localhost
   become: true
   vars_files:
-  - vars/main.yml
+    - vars/main.yml
   pre_tasks:
-  - name: Update repositories
-    yum:
-      name: '*'
-      state: latest
-      update_cache: true
+    - name: Update repositories
+      yum:
+        name: '*'
+        state: latest
+        update_cache: true
+    - name: Check GitHub token set
+      command: [! -z "$GITHUB_PAT"]
   tasks:
     - include: tasks/users.yml
     - include: tasks/install_roles.yml
