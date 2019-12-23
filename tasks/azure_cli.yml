@@ -1,10 +1,9 @@
-
 ---
 
 - name: Register version check
   command: az --version
   register: current_version
-  ignore_errors: yes
+  ignore_errors: true
   changed_when: current_version.rc != 0
 
 - name: Install Azure CLI - repo key

@@ -1,6 +1,5 @@
-
 ---
 
 - name: Install Galaxy roles
   command: ansible-galaxy install -r requirements.yml
-  changed_when: False
+  changed_when: false

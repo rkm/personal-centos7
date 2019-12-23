@@ -1,4 +1,3 @@
-
 ---
 
 - name: Clone https://github.com/rkm/dotfiles
@@ -16,25 +15,25 @@
     /tmp/dotfiles/common/.gitconfig
     /tmp/dotfiles/linux/.gitconfig
     > /tmp/dotfiles/.gitconfig
-  changed_when: False
+  changed_when: false
 
 - name: Copy combined .gitconfig
   copy:
     src: /tmp/dotfiles/.gitconfig
     dest: /home/{{ username  }}/.gitconfig
-    owner: "{{ username  }}"
-    group: "{{ username  }}"
+    owner: '{{ username  }}'
+    group: '{{ username  }}'
     mode: 0640
-    backup: yes
+    backup: true
 
 - name: Copy bash dotfiles
   copy:
     src: /tmp/dotfiles/linux/{{ item  }}
     dest: /home/{{ username  }}/{{ item  }}
-    owner: "{{ username  }}"
-    group: "{{ username  }}"
+    owner: '{{ username  }}'
+    group: '{{ username  }}'
     mode: 0640
-    backup: yes
+    backup: true
   with_items:
     - .bashrc
     - .bash_aliases

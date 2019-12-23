@@ -1,15 +1,14 @@
-
 ---
 
 - name: Register version check
-  shell: git --version | grep " 2." # noqa 303
+  shell: git --version | grep " 2."  # noqa 303
   register: current_version
-  ignore_errors: yes
+  ignore_errors: true
   changed_when: current_version.rc != 0
 
 - name: Remove existing git
   yum:
-    name: "git*"
+    name: git*
     state: removed
   when: current_version.rc != 0
 
