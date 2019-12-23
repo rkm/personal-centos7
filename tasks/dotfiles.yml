@@ -1,12 +1,13 @@
 ---
 
+# TODO(RKM 2019-12-23) Use tempdir
 - name: Clone https://github.com/rkm/dotfiles
   git:
     repo: https://github.com/rkm/dotfiles
     dest: /tmp/dotfiles
     depth: 1
     version: master
-  register: result
+    register: result
   changed_when: result.before != result.after
 
 - name: Create combined .gitconfig
