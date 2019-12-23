@@ -13,13 +13,13 @@ First, you need to create a GitHub Personal access token. Then run:
 > sudo ansible-pull -U https://github.com/rkm/personal-centos7-ansible
 ```
 
-The all-repos-clone task is disabled by default. It can be run with:
+The `all-repos-clone` task is disabled by default. It can be run with:
 
 ```bash
 > au --tags all-repos-clone
 ```
 
-Note that this may take some time as it will clone *all* your repos (i.e. orgs, collaborations, forks, private). This can be configured in `files/all-repos.json`. See https://github.com/asottile/all-repos.
+Note that this may take some time as it will clone/update ***all*** your repos (i.e. orgs, collaborations, forks, private). This can be configured in `files/all-repos.json`. See https://github.com/asottile/all-repos.
 
 ## Configuration
 
