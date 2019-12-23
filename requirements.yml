@@ -3,3 +3,4 @@
 - src: geerlingguy.ntp
 - src: geerlingguy.docker
 - src: geerlingguy.java
+- src: geerlingguy.ruby
