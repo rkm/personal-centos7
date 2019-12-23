@@ -13,7 +13,7 @@
     - name: Check GitHub token set
       debug:
         msg: "GitHub personal access token is required"
-      when: github_pat is not defined
+      failed_when: github_pat is not defined
   tasks:
     - include: tasks/users.yml
     - include: tasks/install_roles.yml
