@@ -2,13 +2,14 @@
 ---
 
 - name: Register version check
-  shell: git --version | grep " 2."
-
+  shell: git --version | grep " 2." # # noqa 303
   register: current_version
   ignore_errors: yes
+  changed_when: current_version.rc != 0
 
 - name: Install git 2
-  shell: |
-    yum -y install https://centos7.iuscommunity.org/ius-release.rpm
-    yum -y install git2u-all
+  yum:
+    name:
+      - https://centos7.iuscommunity.org/ius-release.rpm
+      - git2u-all
   when: current_version.rc != 0
