@@ -5,6 +5,8 @@
   vars_files:
     - vars/main.yml
     - /home/{{ username }}/.ansible_vars.yml
+  environment:
+    - PATH: /usr/local/bin:{{ ansible_env.PATH  }}
   pre_tasks:
     - name: Update repositories
       yum:

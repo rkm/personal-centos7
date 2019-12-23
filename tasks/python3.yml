@@ -4,8 +4,6 @@
   shell: python3 --version | grep {{ python3_version  }}
   register: current_version
   ignore_errors: true
-  environment:
-    PATH: /usr/local/bin:{{ ansible_env.PATH  }}
   changed_when: current_version.rc != 0
 
 - name: Install python3 build dependencies
