@@ -10,12 +10,13 @@
   register: result
   changed_when: result.before != result.after
 
-- name: Create combined .gitconfig # noqaa 301
+- name: Create combined .gitconfig
   shell: >
     cat
     /tmp/dotfiles/common/.gitconfig
     /tmp/dotfiles/linux/.gitconfig
     > /tmp/dotfiles/.gitconfig
+  changed_when: False
 
 - name: Copy combined .gitconfig
   copy:
