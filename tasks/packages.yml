@@ -7,7 +7,9 @@
 - name: Install yum packages
   yum:
     name:
+      - bzip2
       - curl
+      - dkms
       - gcc
       - gdb
       - htop
