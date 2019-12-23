@@ -25,10 +25,10 @@
     executable: /usr/local/bin/pip3
     extra_args: --user
 
-- name: Run all-repos
+- name: Run all-repos-clone
   become: true
   become_user: "{{ username }}"
   command: all-repos-clone -C /home/{{ username }}/dev/all-repos.json -j 0
   register: result
   changed_when: '"branch is behind" in result.stdout'
-  when: true
+  tags: ['never', 'all-repos-clone']
