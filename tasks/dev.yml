@@ -13,6 +13,8 @@
     sed -i "s/UN/{{ username }}/g" files/all-repos.json
     sed -i "s/PAT/{{ github_pat }}/g" files/all-repos.json
   changed_when: False
+  tags:
+    - testeroni
 
 - name: Install all-repos
   pip:
@@ -23,3 +25,5 @@
   command: all-repos-clone -C files/all-repos.json
   register: result
   changed_when: result.rc != 0
+  tags:
+    - testeroni
