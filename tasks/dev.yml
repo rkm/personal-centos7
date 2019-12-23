@@ -8,22 +8,14 @@
     group: "{{ username }}"
     mode: '0740'
 
-# TODO(RKM 2019-12-23) Fix this - it will always result in a change at the
-# moment
-- name: Copy all-repos.json to dev
-  copy:
+- name: Create all-repos.json
+  template:
     src: files/all-repos.json
     dest: /home/{{ username  }}/dev/all-repos.json
     owner: '{{ username  }}'
     group: '{{ username  }}'
     mode: 0600
     backup: true
-
-- name: Create all-repos.json  # noqa 303
-  shell: |
-    sed -i "s/UN/{{ username }}/g" /home/{{ username  }}/dev/all-repos.json
-    sed -i "s/PAT/{{ github_pat }}/g" /home/{{ username  }}/dev/all-repos.json
-  changed_when: False
 
 - name: Install all-repos
   become: true
