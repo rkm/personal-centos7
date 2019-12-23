@@ -22,6 +22,7 @@
       - telnet
       - vim
       - wget
+      - yum install yum-plugin-versionlock
 
 - name: Install pip packages
   pip:
