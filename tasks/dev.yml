@@ -22,7 +22,10 @@
     executable: /usr/local/bin/pip3
 
 - name: Run all-repos-clone
-  command: all-repos-clone -C files/all-repos.json
+  shell: |
+    pwd
+    ls -l
+    all-repos-clone -C files/all-repos.json
   register: result
   changed_when: result.rc != 0
   tags:
