@@ -6,7 +6,8 @@
         "username": "{{ username }}",
         "collaborator": true,
         "forks": true,
-        "private": true
+        "private": true,
+        "all_branches": true
     },
     "push": "all_repos.push.readonly",
     "push_settings": {}
