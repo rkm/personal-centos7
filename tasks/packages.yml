@@ -40,3 +40,7 @@
 - name: Run geerlingguy.java
   include_role:
     name: geerlingguy.java
+
+- name: Run geerlingguy.ruby
+  include_role:
+    name: geerlingguy.ruby
