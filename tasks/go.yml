@@ -1,7 +1,7 @@
 ---
 
 - name: Register version check
-  command: go version | grep {{ go_version  }}
+  shell: /usr/local/go/bin/go version | grep {{ go_version  }}
   register: current_version
   ignore_errors: true
   changed_when: current_version.rc != 0
