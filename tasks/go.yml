@@ -1,7 +1,7 @@
 ---
 
 - name: Register version check
-  shell: go --version | grep {{ go_version  }}
+  command: go version | grep {{ go_version  }}
   register: current_version
   ignore_errors: true
   changed_when: current_version.rc != 0
@@ -15,4 +15,8 @@
     rm go{{ go_version }}.linux-amd64.tar.gz*
   when: current_version.rc != 0
 
-# TODO Create homedir
+- name: Create GOPATH dir
+  file:
+    path: /home/{{ username }}/dev/go
+    state: directory
+    mode: '0750'
