@@ -4,6 +4,7 @@
   tempfile:
     state: directory
   register: tempdir
+  changed_when: false
 
 - name: Clone https://github.com/rkm/dotfiles
   git:
