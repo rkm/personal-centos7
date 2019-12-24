@@ -1,10 +1,14 @@
 ---
 
-# TODO(RKM 2019-12-23) Use tempdir
+- name: Create tmpdir
+  tempfile:
+    state: directory
+  register: tempdir
+
 - name: Clone https://github.com/rkm/dotfiles
   git:
     repo: https://github.com/rkm/dotfiles
-    dest: /tmp/dotfiles
+    dest: "{{ tempdir.path }}"
     depth: 1
     version: master
   register: result
