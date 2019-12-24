@@ -1,0 +1,19 @@
+---
+
+- name: Register version check
+  command: git --version  # noqa 303
+  register: current_version
+  ignore_errors: true
+  changed_when: false
+
+- name: Remove older git if installed
+  package:
+    name: git
+    state: absent
+  when:
+    - current_version.rc == 0
+    - "git_version not in current_version['stdout']"
+
+- name: Run geerlingguy.git
+  include_role:
+    name: geerlingguy.git

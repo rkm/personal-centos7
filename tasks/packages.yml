@@ -29,14 +29,9 @@
     name:
       - speedtest-cli
 
-# TODO: Move this to install_roles and run in loop
 - name: Run geerlingguy.ntp
   include_role:
     name: geerlingguy.ntp
-
-- name: Run geerlingguy.git
-  include_role:
-    name: geerlingguy.git
 
 - name: Set docker username
   set_fact:
