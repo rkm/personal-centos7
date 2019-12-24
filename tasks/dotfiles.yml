@@ -9,23 +9,23 @@
 - name: Clone https://github.com/rkm/dotfiles
   git:
     repo: https://github.com/rkm/dotfiles
-    dest: "{{ tempdir.path }}"
+    dest: "{{ tempdir.path }}/dotfiles"
     depth: 1
     version: master
   register: result
-  changed_when: result['before'] != result['after']
+  changed_when: false
 
 - name: Create combined .gitconfig
   shell: >
     cat
-    /tmp/dotfiles/common/.gitconfig
-    /tmp/dotfiles/linux/.gitconfig
-    > /tmp/dotfiles/.gitconfig
+    "{{ tempdir.path }}/dotfiles/common/.gitconfig"
+    "{{ tempdir.path }}/dotfiles/linux/.gitconfig"
+    > "{{ tempdir.path }}/dotfiles/.gitconfig"
   changed_when: false
 
 - name: Copy combined .gitconfig
   copy:
-    src: /tmp/dotfiles/.gitconfig
+    src: "{{ tempdir.path }}/dotfiles/.gitconfig"
     dest: /home/{{ username  }}/.gitconfig
     owner: '{{ username  }}'
     group: '{{ username  }}'
@@ -34,7 +34,7 @@
 
 - name: Copy bash dotfiles
   copy:
-    src: /tmp/dotfiles/linux/{{ item  }}
+    src: "{{ tempdir.path }}/dotfiles/linux/{{ item  }}"
     dest: /home/{{ username  }}/{{ item  }}
     owner: '{{ username  }}'
     group: '{{ username  }}'
