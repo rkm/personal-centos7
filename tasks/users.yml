@@ -16,5 +16,3 @@
   with_list:
     - ansible
     - "{{ username }}"
-  tags:
-    - testeroni

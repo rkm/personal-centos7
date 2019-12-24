@@ -5,6 +5,8 @@ username: rkm
 
 python3_version: 3.7.6
 
+go_version: 1.13.5
+
 # geerlingguy.ntp
 ntp_timezone: Europe/London
 

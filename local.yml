@@ -17,6 +17,7 @@
     - include: tasks/install_roles.yml
     - include: tasks/packages.yml
     - include: tasks/python3.yml
+    - include: tasks/go.yml
     - include: tasks/azure_cli.yml
     - include: tasks/dotfiles.yml
     - include: tasks/dev.yml
