@@ -1,9 +1,5 @@
 ---
 
-- name: Install EPEL
-  yum:
-    name: epel-release
-
 - name: Install yum packages
   yum:
     name:
