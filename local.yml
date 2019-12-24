@@ -22,3 +22,4 @@
     - include: tasks/azure_cli.yml
     - include: tasks/dotfiles.yml
     - include: tasks/dev.yml
+    - include: tasks/cleanup.yml
