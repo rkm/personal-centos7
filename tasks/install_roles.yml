@@ -4,7 +4,7 @@
   become: true
   command: yum install ansible  # noqa: 303
   register: result
-  changed_when: Downloading in result.stdout
+  changed_when: false
 
 - name: Install Galaxy roles
   command: ansible-galaxy install -r requirements.yml
