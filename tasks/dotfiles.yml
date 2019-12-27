@@ -26,6 +26,7 @@
 - name: Copy combined .gitconfig
   copy:
     src: "{{ tempdir.path }}/dotfiles/.gitconfig"
+    remote_src: true
     dest: /home/{{ username  }}/.gitconfig
     owner: '{{ username  }}'
     group: '{{ username  }}'
@@ -35,6 +36,7 @@
 - name: Copy bash dotfiles
   copy:
     src: "{{ tempdir.path }}/dotfiles/linux/{{ item  }}"
+    remote_src: true
     dest: /home/{{ username  }}/{{ item  }}
     owner: '{{ username  }}'
     group: '{{ username  }}'
