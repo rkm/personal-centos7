@@ -1,9 +1,10 @@
 ---
 
 - name: Install ansible
-  package:
-    name: ansible
-    state: present
+  become: true
+  command: yum install ansible  # noqa: 303
+  register: result
+  changed_when: Downloading in result.stdout
 
 - name: Install Galaxy roles
   command: ansible-galaxy install -r requirements.yml
