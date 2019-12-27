@@ -4,4 +4,3 @@
   command: ansible-galaxy install -r requirements.yml
   register: result
   changed_when: downloading in result.stdout
-  when: true
