@@ -44,3 +44,7 @@
 - name: Run geerlingguy.ruby
   include_role:
     name: geerlingguy.ruby
+
+- name: Run rkm.dotnet_core
+  include_role:
+    name: rkm.dotnet_core
