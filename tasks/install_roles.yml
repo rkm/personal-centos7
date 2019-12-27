@@ -1,8 +1,9 @@
 ---
 
 - name: Install ansible
-  include_role:
-    name: geerlingguy.ansible
+  yum:
+    name: ansible
+    state: present
 
 - name: Install Galaxy roles
   command: ansible-galaxy install -r requirements.yml
