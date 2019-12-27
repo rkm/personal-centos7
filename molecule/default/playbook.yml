@@ -3,7 +3,11 @@
 - name: Converge
   hosts: all
   pre_tasks:
-    - name: Debug
+    - name: Debug 1
       command: echo ${hostname}
+      register: result
+    - name: Debug 2
+      debug:
+        msg: DBG {{ result }}
   tasks:
     - include: ../../local.yml
