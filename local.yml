@@ -10,7 +10,7 @@
     - name: Update repositories
       yum:
         name: '*'
-        state: latest
+        state: present
         update_cache: true
   tasks:
     - include: tasks/users.yml
