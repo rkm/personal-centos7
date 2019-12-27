@@ -7,4 +7,4 @@
 
 - name: Debug
   debug:
-    msg: DBG: {{ result}}
+    msg: "DBG: {{ result }}"
