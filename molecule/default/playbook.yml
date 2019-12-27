@@ -2,6 +2,8 @@
 
 - name: Converge
   hosts: all
-  become: true
-  roles:
-    - role: loca
+  pre_tasks:
+    - name: Debug
+      command: echo ${hostname}
+  tasks:
+    - include: ../../local.yml
