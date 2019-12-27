@@ -1,5 +1,6 @@
 ---
 
+- src: geerlingguy.ansible
 - src: geerlingguy.ntp
 - src: geerlingguy.docker
 - src: geerlingguy.git

@@ -1,5 +1,9 @@
 ---
 
+- name: Install ansible
+  include_role:
+    name: geerlingguy.ansible
+
 - name: Install Galaxy roles
   command: ansible-galaxy install -r requirements.yml
   register: result
