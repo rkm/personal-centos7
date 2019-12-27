@@ -3,9 +3,9 @@
 - name: Install Galaxy roles
   command: ansible-galaxy install -r requirements.yml
   register: result
-#  changed_when: downloading in result.stdout
+  # changed_when: downloading in result.stdout
   changed_when: false
-  
+
 - name: Debug
   debug:
     msg: "DBG: {{ result }}"
