@@ -24,3 +24,6 @@ ruby_install_from_source: true
 
 # rkm.dotnet_core
 dotnet_package: 2.2
+
+# andrewrothstein.go
+go_ver: '1.13.5'

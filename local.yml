@@ -8,11 +8,9 @@
     - PATH: /usr/local/bin:{{ ansible_env.PATH  }}
   tasks:
     - include: tasks/users.yml
-    - include: tasks/install_roles.yml
     - include: tasks/git.yml
     - include: tasks/packages.yml
     - include: tasks/python3.yml
-    - include: tasks/go.yml
     - include: tasks/azure_cli.yml
     - include: tasks/dotfiles.yml
     - include: tasks/dev.yml

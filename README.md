@@ -5,8 +5,17 @@ Ansible configuration for my personal CentOS 7 VMs.
 
 ## Usage
 
+### Automatic
+
 ```bash
-> sudo yum -y install git epel-release ansible && sudo yum -y update
+> wget https://github.com/rkm/personal-centos7-ansible/blob/master/install.sh | bash
+```
+
+### Manual
+
+```bash
+> sudo yum -y install git epel-release ansible
+> ansible-galaxy install -r requirements.yml
 > ansible-pull -U https://github.com/rkm/personal-centos7-ansible
 ```
 
