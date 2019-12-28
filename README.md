@@ -8,7 +8,7 @@ Ansible configuration for my personal CentOS 7 VMs.
 ### Automatic
 
 ```bash
-> wget https://github.com/rkm/personal-centos7-ansible/blob/master/install.sh | bash
+> wget -q -O - https://raw.githubusercontent.com/rkm/personal-centos7-ansible/master/install.sh | bash
 ```
 
 ### Manual
