@@ -3,11 +3,15 @@
 - name: Converge
   hosts: all
   pre_tasks:
-    - name: Debug 1
-      command: echo ${hostname}
-      register: result
-    - name: Debug 2
-      debug:
-        msg: DBG {{ result }}
+    - name: Install yum dependencies
+      yum:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - epel-release
+        - git
+        - ansible
+    - name: Install Galaxy dependencies
+      command: ansible-galaxy install -r requirements.yml
   tasks:
     - include: ../../local.yml
