@@ -45,4 +45,5 @@
   with_items:
     - .bashrc
     - .bash_aliases
+    - .bash_aliases_azure
     - .inputrc
