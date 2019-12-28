@@ -33,10 +33,12 @@
 - name: Set docker username
   set_fact:
     docker_users: ["{{ username }}"]
+  when: not lookup('env', 'DOCKER')
 
 - name: Run geerlingguy.docker
   include_role:
     name: geerlingguy.docker
+  when: not lookup('env', 'DOCKER')
 
 - name: Run geerlingguy.java
   include_role:
