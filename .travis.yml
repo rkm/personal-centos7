@@ -13,7 +13,6 @@ install:
   - docker exec centos7 bash -c "yum -y install wget sudo"
 
 script:
-  - "docker exec centos7 'yum -y install sudo wget'"
-  - "docker exec centos7 'wget https://raw.githubusercontent.com/rkm/\
+  - "docker exec centos7 bash -c 'wget https://raw.githubusercontent.com/rkm/\
     personal-centos7-ansible/master/install.sh'"
-  - "docker exec centos7 'bash install.sh'"
+  - docker exec centos7 bash -c "./install.sh"
