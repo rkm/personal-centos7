@@ -5,12 +5,14 @@ os: linux
 language: python
 python:
   - "3.7"
-cache: pip
 
 services: docker
 
 install:
-  - pip install molecule docker
+  - docker run -td --rm --name centos7 centos:7
+  - docker exec centos7 bash -c "yum -y install wget sudo"
 
 script:
-  - molecule test
+  - "docker exec centos7 bash -c \
+    wget -q -O - https://raw.githubusercontent.com/rkm/\
+    personal-centos7-ansible/master/install.sh | bash"
