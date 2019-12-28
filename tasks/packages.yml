@@ -28,6 +28,7 @@
 - name: Run geerlingguy.ntp
   include_role:
     name: geerlingguy.ntp
+  when: not lookup('env', 'DOCKER')
 
 - name: Set docker username
   set_fact:

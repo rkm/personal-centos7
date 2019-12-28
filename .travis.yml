@@ -16,4 +16,4 @@ script:
   - "docker exec centos7 bash -c 'wget https://raw.githubusercontent.com/rkm/\
     personal-centos7-ansible/master/install.sh'"
   - docker exec centos7 bash -c "chmod +x install.sh"
-  - docker exec centos7 bash -c "./install.sh"
+  - docker exec -e DOCKER=1 centos7 bash -c "./install.sh"
