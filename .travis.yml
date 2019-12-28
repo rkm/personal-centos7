@@ -11,6 +11,7 @@ services: docker
 install:
   - docker run -td --rm --name centos7 centos:7
   - docker exec centos7 bash -c "yum -y install wget sudo"
+  - docker exec centos7 bash -c "mkdir /home/rkm"
 
 script:
   - "docker exec centos7 bash -c 'wget https://raw.githubusercontent.com/rkm/\
