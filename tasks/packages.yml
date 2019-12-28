@@ -51,7 +51,3 @@
 - name: Run rkm.dotnet_core
   include_role:
     name: rkm.dotnet_core
-
-- name: Run andrewrothstein.go
-  include_role:
-    name: andrewrothstein.go

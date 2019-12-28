@@ -1,0 +1,11 @@
+---
+
+- name: Run andrewrothstein.go
+  include_role:
+    name: andrewrothstein.go
+
+- name: Install go packages
+  command: /usr/local/go/bin/go get -u {{ item }}
+  with_items:
+    - github.com/tomnomnom/gron
+  changed_when: false
