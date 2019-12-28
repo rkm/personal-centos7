@@ -1,4 +1,6 @@
 
+[![Build Status](https://travis-ci.org/rkm/personal-centos7-ansible.svg?branch=master)](https://travis-ci.org/rkm/personal-centos7-ansible)
+
 # Personal CentOS 7 Ansible
 
 Ansible configuration for my personal CentOS 7 VMs.
