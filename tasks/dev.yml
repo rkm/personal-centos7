@@ -25,11 +25,9 @@
   tags: ['never', 'all-repos-clone']
 
 - name: Install all-repos
-#  become: true
-#  become_user: "{{ username }}"
   pip:
     name: all-repos
-    executable: python3 -m pip
+#    executable: python3 -m pip
     extra_args: --user
 
 - name: Run all-repos-clone
