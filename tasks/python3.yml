@@ -20,7 +20,7 @@
 - name: Create python install scripts
   template:
     src: files/install_python.sh.j2
-    dest: "{{ tempdir.path }}/install_pyhon_{{ item.item }}.sh"
+    dest: "{{ tempdir.path }}/install_python_{{ item.item }}.sh"
     owner: '{{ username  }}'
     group: '{{ username  }}'
     mode: 0700
@@ -28,7 +28,8 @@
   with_items: "{{ python_stats.results }}"
 
 - name: Run python install scripts
-  script: "{{ tempdir.path }}/install_pyhon_{{ item.item }}.sh"
+  become: true
+  script: "{{ tempdir.path }}/install_python_{{ item.item }}.sh"
   when: not item.stat.exists
   with_items: "{{ python_stats.results }}"
 
