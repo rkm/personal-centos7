@@ -26,18 +26,16 @@
 - name: Install python versions
   become: true
   shell: |
+    echo {{ item.item }}
     cd /usr/src
-    wget https://www.python.org/ftp/python/{{ item }}\
-    /Python-{{ item }}.tgz
-    tar xzf Python-{{ item }}.tgz
-    cd Python-{{ item }}
+    wget https://www.python.org/ftp/python/{{ item.item }}\
+    /Python-{{ item.item }}.tgz
+    tar xzf Python-{{ item.item }}.tgz
+    cd Python-{{ item.item }}
     ./configure --enable-optimizations
     make altinstall --exec-prefix=/usr/local
     cd ..
-    rm Python-{{ item }}.tgz
-    # ln -fs /usr/local/bin/python{{ item[:3]  }} \
-    # /usr/local/bin/python3
-    # ln -fs /usr/local/bin/pip{{ item[:3]  }} /usr/local/bin/pip3
+    rm Python-{{ item.item }}.tgz
   when: not item.stat.exists
   with_items: "{{ python_stats.results }}"
   tags: ['python']
