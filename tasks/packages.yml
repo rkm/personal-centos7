@@ -20,11 +20,6 @@
       - wget
       - yum-plugin-versionlock
 
-- name: Install pip packages
-  pip:
-    name:
-      - speedtest-cli
-
 - name: Run geerlingguy.ntp
   include_role:
     name: geerlingguy.ntp

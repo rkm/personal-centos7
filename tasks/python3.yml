@@ -35,3 +35,9 @@
     # ln -fs /usr/local/bin/pip{{ item[:3]  }} /usr/local/bin/pip3
   with_items: "{{ python_versions }}"
   when: current_version.rc != 0
+
+- name: Install pip packages
+  pip:
+    name:
+      - speedtest-cli
+    executable: pip3
