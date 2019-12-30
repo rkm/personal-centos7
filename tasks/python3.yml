@@ -13,7 +13,7 @@
 
 - name: Check existing versions
   stat:
-    path: "/usr/local/bin/{{ item[:3] }}"
+    path: "/usr/local/bin/python{{ item[:3] }}"
   register: python_stats
   with_items: "{{ python_versions }}"
 
