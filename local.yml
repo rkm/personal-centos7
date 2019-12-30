@@ -8,7 +8,7 @@
     - PATH: /usr/local/bin:{{ ansible_env.PATH  }}
   tasks:
     - include: tasks/setup.yml
-      tasg: ['always']
+      tags: ['always']
     - include: tasks/users.yml
     - include: tasks/git.yml
     - include: tasks/packages.yml
