@@ -1,0 +1,11 @@
+---
+
+- name: Create tmpdir
+  tempfile:
+    state: directory
+  register: tempdir
+  changed_when: false
+
+- name: Debug
+  debug:
+    msg: temp {{ tempdir }}

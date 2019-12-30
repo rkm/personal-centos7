@@ -10,25 +10,30 @@
       - sqlite-devel
       - xz-devel
       - uuid-devel
-  tags: ['python']
 
 - name: Check existing versions
   stat:
     path: "/usr/local/bin/{{ item[:3] }}"
   register: python_stats
   with_items: "{{ python_versions }}"
-  tags: ['python']
 
-- name: Install python versions
-  become: true
-  script: files/install_python.sh.j2
+- name: Create python install scripts
+  template:
+    src: files/install_python.sh.j2
+    dest: "{{ tempdir.path }}/install_pyhon_{{ item.item }}.sh"
+    owner: '{{ username  }}'
+    group: '{{ username  }}'
+    mode: 0700
   when: not item.stat.exists
   with_items: "{{ python_stats.results }}"
-  tags: ['python']
+
+- name: Run python install scripts
+  script: "{{ tempdir.path }}/install_pyhon_{{ item.item }}.sh"
+  when: not item.stat.exists
+  with_items: "{{ python_stats.results }}"
 
 - name: Install pip packages
   pip:
     name:
       - speedtest-cli
     executable: pip3
-  tags: ['python']
