@@ -3,7 +3,9 @@
 # Set this to your $USER
 username: rkm
 
-python3_version: 3.7.6
+python_versions:
+  - 3.7.6
+  - 3.8.1
 
 go_version: 1.13.5
 

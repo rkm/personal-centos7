@@ -14,9 +14,11 @@
       - libffi-devel
       - openssl-devel
       - sqlite-devel
+      - xd-devel
+      - uuid-devel
   when: current_version.rc != 0
 
-- name: Install python3
+- name: Install python versions
   become: true
   shell: |
     cd /usr/src
@@ -28,7 +30,8 @@
     make altinstall --exec-prefix=/usr/local
     cd ..
     rm Python-{{ python3_version  }}.tgz
-    ln -fs /usr/local/bin/python{{ python3_version[:3]  }} \
-    /usr/local/bin/python3
-    ln -fs /usr/local/bin/pip{{ python3_version[:3]  }} /usr/local/bin/pip3
+    # ln -fs /usr/local/bin/python{{ python3_version[:3]  }} \
+    # /usr/local/bin/python3
+    # ln -fs /usr/local/bin/pip{{ python3_version[:3]  }} /usr/local/bin/pip3
+  with_items: "{{ python_versions }}"
   when: current_version.rc != 0
