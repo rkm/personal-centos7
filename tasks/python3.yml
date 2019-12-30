@@ -19,7 +19,7 @@
 
 - name: Create python install scripts
   template:
-    remote_src: files/install_python.sh.j2
+    src: files/install_python.sh.j2
     dest: "{{ tempdir.path }}/install_python_{{ item.item }}.sh"
     owner: '{{ username  }}'
     group: '{{ username  }}'
