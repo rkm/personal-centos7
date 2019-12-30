@@ -19,6 +19,10 @@
   with_items: "{{ python_versions }}"
   tags: ['python']
 
+- name: Debug
+  debug: var=python_stats
+  tags: ['python']
+
 - name: Install python versions
   become: true
   shell: |
