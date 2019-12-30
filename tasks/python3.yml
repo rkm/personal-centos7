@@ -34,6 +34,15 @@
   when: not item.stat.exists
   with_items: "{{ python_stats.results }}"
 
+- name: Check python installed
+  command: ls -l /usr/local/bin
+  register: result
+  changed_when: false
+
+- name: Debug
+  debug:
+    msg: "Debug {{ result }}"
+
 - name: Install pip packages
   pip:
     name:
