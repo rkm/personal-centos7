@@ -34,9 +34,7 @@
     # ln -fs /usr/local/bin/python{{ item[:3]  }} \
     # /usr/local/bin/python3
     # ln -fs /usr/local/bin/pip{{ item[:3]  }} /usr/local/bin/pip3
-  when:
-    - not item | skipped
-    - item.stat.exists
+  when: item.stat.exists
   with_items: "{{ python_stats.results }}"
   tags: ['python']
 
