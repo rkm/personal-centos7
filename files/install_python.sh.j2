@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -ev
+cd /usr/src
+wget -q https://www.python.org/ftp/python/{{ item.item }}/Python-{{ item.item }}.tgz
+tar xzf Python-{{ item.item }}.tgz
+cd Python-{{ item.item }}
+./configure --enable-optimizations --exec-prefix=/usr/local
+make altinstall
+cd ..
+rm Python-{{ item.item }}.tgz
