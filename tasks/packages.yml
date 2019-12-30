@@ -19,6 +19,7 @@
       - vim
       - wget
       - yum-plugin-versionlock
+  tags: ['always']
 
 - name: Run geerlingguy.ntp
   include_role:
