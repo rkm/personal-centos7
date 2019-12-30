@@ -10,12 +10,14 @@
       - sqlite-devel
       - xd-devel
       - uuid-devel
+  tags: ['python']
 
 - name: Check existing versions
   stat:
     path: "/usr/local/bin/{{ item[:3] }}"
   register: python_stats
   with_items: "{{ python_versions }}"
+  tags: ['python']
 
 - name: Install python versions
   become: true
@@ -36,9 +38,11 @@
     - not item | skipped
     - item.stat.exists
   with_items: "{{ python_stats.results }}"
+  tags: ['python']
 
 - name: Install pip packages
   pip:
     name:
       - speedtest-cli
     executable: pip3
+  tags: ['python']
