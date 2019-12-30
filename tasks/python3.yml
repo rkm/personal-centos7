@@ -36,4 +36,4 @@
   pip:
     name:
       - speedtest-cli
-    executable: pip3
+    executable: "python3 -m pip"
