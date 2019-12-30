@@ -18,6 +18,7 @@
   with_items: "{{ python_versions }}"
 
 - name: Create python install scripts
+  become: true
   template:
     src: files/install_python.sh.j2
     dest: "{{ tempdir.path }}/install_python_{{ item.item }}.sh"
