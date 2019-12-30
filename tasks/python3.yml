@@ -23,7 +23,7 @@
     dest: "{{ tempdir.path }}/install_python_{{ item.item }}.sh"
     owner: '{{ username  }}'
     group: '{{ username  }}'
-    mode: 0700
+    mode: 0111
   when: not item.stat.exists
   with_items: "{{ python_stats.results }}"
 
