@@ -22,16 +22,16 @@
   become: true
   shell: |
     cd /usr/src
-    wget https://www.python.org/ftp/python/{{ python3_version  }}\
-    /Python-{{ python3_version  }}.tgz
-    tar xzf Python-{{ python3_version  }}.tgz
-    cd Python-{{ python3_version  }}
+    wget https://www.python.org/ftp/python/{{ item }}\
+    /Python-{{ item }}.tgz
+    tar xzf Python-{{ item }}.tgz
+    cd Python-{{ item }}
     ./configure --enable-optimizations
     make altinstall --exec-prefix=/usr/local
     cd ..
-    rm Python-{{ python3_version  }}.tgz
-    # ln -fs /usr/local/bin/python{{ python3_version[:3]  }} \
+    rm Python-{{ item }}.tgz
+    # ln -fs /usr/local/bin/python{{ item[:3]  }} \
     # /usr/local/bin/python3
-    # ln -fs /usr/local/bin/pip{{ python3_version[:3]  }} /usr/local/bin/pip3
+    # ln -fs /usr/local/bin/pip{{ item[:3]  }} /usr/local/bin/pip3
   with_items: "{{ python_versions }}"
   when: current_version.rc != 0
