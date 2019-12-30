@@ -22,6 +22,7 @@
 - name: Install python versions
   become: true
   shell: |
+    set -e
     aaaaa # Test
     cd /usr/src
     wget -q https://www.python.org/ftp/python/{{ item.item }}\
