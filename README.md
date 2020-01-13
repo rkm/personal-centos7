@@ -37,3 +37,4 @@ See `vars/main.yml` for configurable settings. You should at least change the `u
 ## TODO
 
 - mvn
+- Ensure things installed to `/usr/local`

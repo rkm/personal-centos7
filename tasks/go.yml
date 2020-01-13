@@ -1,8 +1,8 @@
 ---
 
-- name: Run andrewrothstein.go
+- name: Run gantsign.golang
   include_role:
-    name: andrewrothstein.go
+    name: gantsign.golang
 
 - name: Install go packages
   command: /usr/local/go/bin/go get -u {{ item }}

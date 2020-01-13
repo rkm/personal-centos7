@@ -1,10 +1,10 @@
 ---
 
+- src: gantsign.golang
 - src: geerlingguy.ansible
-- src: geerlingguy.ntp
 - src: geerlingguy.docker
 - src: geerlingguy.git
 - src: geerlingguy.java
+- src: geerlingguy.ntp
 - src: geerlingguy.ruby
 - src: rkm.dotnet_core
-- src: andrewrothstein.go

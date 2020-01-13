@@ -27,5 +27,7 @@ ruby_install_from_source: true
 # rkm.dotnet_core
 dotnet_package: 2.2
 
-# andrewrothstein.go
-go_ver: '1.13.5'
+# gantsign.golang
+golang_version: '1.13.6'
+golang_install_dir: /usr/local/go/{{ golang_version }}
+golang_download_dir: /usr/src/go
