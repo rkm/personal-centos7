@@ -3,12 +3,12 @@
     "source": "all_repos.source.github",
     "source_settings": {
         "api_key": "{{ private['github_pat'] }}",
-        "username": "{{ username }}",
         "collaborator": true,
         "forks": true,
         "private": true,
-        "all_branches": true
+        "username": "{{ username }}"
     },
     "push": "all_repos.push.readonly",
-    "push_settings": {}
+    "push_settings": {},
+    "all_branches": true
 }
