@@ -21,5 +21,7 @@
       tags: ['dotfiles']
     - include: tasks/dev.yml
       tags: ['dev']
+    - include: tasks/all-repos.yml
+      tags: ['never', 'all-repos-clone']
     - include: tasks/cleanup.yml
       tags: ['always']

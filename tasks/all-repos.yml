@@ -1,0 +1,17 @@
+---
+
+- name: Load GitHub access token
+  include_vars:
+    file: /home/{{ username }}/.ansible_vars.yml
+    name: private
+  tags: ['never', 'all-repos-clone']
+
+- name: Create all-repos.json
+  template:
+    src: files/all-repos.json
+    dest: /home/{{ username  }}/dev/all-repos.json
+    owner: '{{ username  }}'
+    group: '{{ username  }}'
+    mode: 0600
+    backup: true
+  tags: ['never', 'all-repos-clone']
