@@ -3,6 +3,7 @@
 - name: Install yum packages
   yum:
     name:
+      - bind-utils
       - bzip2
       - curl
       - dkms
@@ -16,6 +17,7 @@
       - screen
       - strace
       - telnet
+      - traceroute
       - vim
       - wget
       - yum-plugin-versionlock
