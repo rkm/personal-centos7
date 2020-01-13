@@ -20,5 +20,6 @@
     - include: tasks/dotfiles.yml
       tags: ['dotfiles']
     - include: tasks/dev.yml
+      tags: ['dev']
     - include: tasks/cleanup.yml
       tags: ['always']
