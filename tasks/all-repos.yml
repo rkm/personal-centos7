@@ -15,6 +15,7 @@
     backup: true
 
 - name: Run all-repos-clone
-  command: all-repos-clone -C /home/{{ username }}/dev/all-repos.json -j0
+  shell: |
+    ~/.local/bin/all-repos-clone -C /home/{{ username }}/dev/all-repos.json -j0
   register: result
   changed_when: '"branch is behind" in result.stdout'
