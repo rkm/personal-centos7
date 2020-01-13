@@ -15,8 +15,10 @@
     - include: tasks/python3.yml
       tags: ['python']
     - include: tasks/go.yml
+      tags: ['go']
     - include: tasks/azure_cli.yml
     - include: tasks/dotfiles.yml
+      tags: ['dotfiles']
     - include: tasks/dev.yml
     - include: tasks/cleanup.yml
       tags: ['always']
