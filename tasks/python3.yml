@@ -37,6 +37,7 @@
 - name: Install pip packages
   pip:
     name:
+      - all-repos
       - speedtest-cli
       - virtualenv
     executable: pip3
