@@ -1,7 +1,8 @@
 #!/bin/bash
 
 set -ev
-cd /usr/src
+mkdir -p /usr/src/python
+cd /usr/src/python
 wget -q https://www.python.org/ftp/python/{{ item.item }}/Python-{{ item.item }}.tgz
 tar xzf Python-{{ item.item }}.tgz
 cd Python-{{ item.item }}
