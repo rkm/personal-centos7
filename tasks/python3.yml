@@ -39,4 +39,5 @@
     name:
       - speedtest-cli
       - virtualenv
-    executable: "/usr/local/bin/pip3.7"
+    executable: pip3
+    extra_args: --user
