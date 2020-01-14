@@ -3,7 +3,7 @@
 set -ev
 
 sudo yum -y install epel-release && sudo yum -y install git ansible
-wget -q https://raw.githubusercontent.com/rkm/personal-centos7-ansible/master/requirements.yml
+git clone --depth=1 https://github.com/rkm/personal-centos7-ansible
+cd personal-centos7-ansible
 ansible-galaxy install -r requirements.yml
-rm requirements.yml
-ansible-pull -U https://github.com/rkm/personal-centos7-ansible
+ansible-playbook local.yml
