@@ -27,7 +27,7 @@
     mode: 0640
     backup: true
 
-- name: Copy bash dotfiles
+- name: Copy dotfiles
   copy:
     src: "{{ tempdir.path }}/dotfiles/linux/{{ item  }}"
     remote_src: true
@@ -41,3 +41,4 @@
     - .bash_aliases
     - .bash_aliases_azure
     - .inputrc
+    - .vimrc
