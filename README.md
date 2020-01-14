@@ -17,8 +17,10 @@ Ansible configuration for my personal CentOS 7 VMs.
 
 ```bash
 > sudo yum -y install git epel-release ansible
+> git clone https://github.com/rkm/personal-centos7-ansible
+> cd personal-centos7-ansible
 > ansible-galaxy install -r requirements.yml
-> ansible-pull -U https://github.com/rkm/personal-centos7-ansible
+> ansible-playbook [-v] [--tags <tags>] local.yml
 ```
 
 The `all-repos-clone` task is disabled by default. To enable it, you need to first create a GitHub Personal access token. Then run:
