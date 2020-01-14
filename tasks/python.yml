@@ -40,5 +40,5 @@
       - all-repos
       - speedtest-cli
       - virtualenv
-    executable: /usr/local/bin/pip3
+    executable: /usr/local/bin/pip3.8
     extra_args: --user
