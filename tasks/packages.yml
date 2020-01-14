@@ -13,6 +13,7 @@
       - net-tools
       - nmap
       - python-pip
+      - readline-devel
       - rsync
       - screen
       - strace
