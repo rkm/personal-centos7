@@ -12,7 +12,7 @@
     - include: tasks/users.yml
     - include: tasks/git.yml
     - include: tasks/packages.yml
-    - include: tasks/python3.yml
+    - include: tasks/python.yml
       tags: ['python']
     - include: tasks/go.yml
       tags: ['go']
