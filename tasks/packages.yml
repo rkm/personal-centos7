@@ -1,11 +1,12 @@
 ---
 
 - name: Install yum packages
-  yum:
+  package:
     name:
       - bind-utils
       - bzip2
       - curl
+      - deltarpm
       - dkms
       - gcc
       - gdb
