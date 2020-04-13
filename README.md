@@ -40,3 +40,5 @@ See `vars/main.yml` for configurable settings. You should at least change the `u
 
 - mvn
 - Ensure things installed to `/usr/local`
+- Add usbutils to packages
+- Refresh python versions
