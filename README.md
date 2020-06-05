@@ -1,44 +1,30 @@
 
 [![Build Status](https://travis-ci.org/rkm/personal-centos7.svg?branch=master)](https://travis-ci.org/rkm/personal-centos7)
 
-# Personal CentOS 7 Ansible
+# Personal CentOS 7 Build
 
 Ansible configuration for my personal CentOS 7 VMs.
+
+This is based on a fresh VirtualBox VM based on the `CentOS-7-x86_64-Minimal-1908.iso` image.
+
+It currently requires two network adapters to be present
+  - `enp0s3` - NAT adapter
+  - `enp0s8` - Host-only adapter
+
+The 3/8 naming seems to happen by default when you add the adapters in VirtualBox.
 
 ## Usage
 
 ### Automatic
 
 ```bash
-> wget -q -O - https://raw.githubusercontent.com/rkm/personal-centos7/master/install.sh | bash
+> curl -Ls https://raw.githubusercontent.com/rkm/personal-centos7/master/install.sh | bash
 ```
 
 ### Manual
 
-```bash
-> sudo yum -y install git epel-release ansible
-> git clone https://github.com/rkm/personal-centos7
-> cd personal-centos7
-> ansible-galaxy install -r requirements.yml
-> ansible-playbook [-v] [--tags <tags>] local.yml
-```
-
-The `all-repos-clone` task is disabled by default. To enable it, you need to first create a GitHub Personal access token. Then run:
-
-```bash
-> echo github_pat: <your pat> > ~/.ansible_vars.yml
-> au --tags all-repos-clone
-```
-
-Note that this may take some time as it will clone/update ***all*** your repos (i.e. orgs, collaborations, forks, private). This can be configured in `files/all-repos.json`. See https://github.com/asottile/all-repos.
+Copy & run the `install.sh` script.
 
 ## Configuration
 
 See `vars/main.yml` for configurable settings. You should at least change the `username`.
-
-## TODO
-
-- mvn
-- Ensure things installed to `/usr/local`
-- Add usbutils to packages
-- Refresh python versions
