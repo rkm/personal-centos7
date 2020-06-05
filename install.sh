@@ -1,9 +1,23 @@
 #!/bin/bash
 
-set -ev
+set -euxo pipefail
 
-sudo yum -q -y install epel-release && sudo yum -q -y install git ansible
-git clone --depth=1 https://github.com/rkm/personal-centos7
-cd personal-centos7
-ansible-galaxy install -r requirements.yml
-ansible-playbook local.yml
+PKG=yum
+OS=7
+
+if [ "$(stat ~/.ssh/id_rsa* | grep 0400 | wc -l)" != "2" ]; then
+    echo Install ssh keys with correct permissions first!
+    exit 1
+fi
+
+sudo $PKG -y update && \
+sudo $PKG -y install epel-release && \
+sudo $PKG -y install ansible tar && \
+curl -Ls https://api.github.com/repos/rkm/personal-centos${OS}/tarball > repo.tgz && \
+tar xzf repo.tgz && \
+pushd rkm-personal-centos${OS}-* && \
+ansible-galaxy install -r requirements.yml && \
+ansible-playbook -K local.yml && \
+popd && \
+rm -r rkm-personal-centos${OS}* repo.tgz && \
+echo "Initial install complete - A reboot is recommended"
