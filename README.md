@@ -1,5 +1,5 @@
 
-[![Build Status](https://travis-ci.org/rkm/personal-centos7-ansible.svg?branch=master)](https://travis-ci.org/rkm/personal-centos7-ansible)
+[![Build Status](https://travis-ci.org/rkm/personal-centos7.svg?branch=master)](https://travis-ci.org/rkm/personal-centos7)
 
 # Personal CentOS 7 Ansible
 
@@ -10,15 +10,15 @@ Ansible configuration for my personal CentOS 7 VMs.
 ### Automatic
 
 ```bash
-> wget -q -O - https://raw.githubusercontent.com/rkm/personal-centos7-ansible/master/install.sh | bash
+> wget -q -O - https://raw.githubusercontent.com/rkm/personal-centos7/master/install.sh | bash
 ```
 
 ### Manual
 
 ```bash
 > sudo yum -y install git epel-release ansible
-> git clone https://github.com/rkm/personal-centos7-ansible
-> cd personal-centos7-ansible
+> git clone https://github.com/rkm/personal-centos7
+> cd personal-centos7
 > ansible-galaxy install -r requirements.yml
 > ansible-playbook [-v] [--tags <tags>] local.yml
 ```
