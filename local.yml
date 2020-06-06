@@ -13,8 +13,6 @@
     - include: tasks/git.yml
       tags: ['git']
     - include: tasks/packages.yml
-    - include: tasks/python.yml
-      tags: ['python']
     - include: tasks/go.yml
       tags: ['go']
     - include: tasks/azure_cli.yml
